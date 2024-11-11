@@ -38,4 +38,4 @@ if uploaded_model is not None:
             st.write(f"**Prediction:** No pneumonia detected with **confidence: {100 - confidence:.2f}%**")
 else:
     st.write("Please upload the model file to proceed.")
-        st.write(f"**Prediction:** No pneumonia detected with **confidence: {100 - confidence:.2f}%**")
+
