@@ -3,6 +3,7 @@ import tensorflow as tf
 import numpy as np
 import cv2
 from PIL import Image
+import tempfile
 
 st.title("Pneumonia Detection from Chest X-Ray")
 st.write("Upload a chest X-ray image to check for signs of pneumonia.")
@@ -11,7 +12,13 @@ st.write("Upload a chest X-ray image to check for signs of pneumonia.")
 uploaded_model = st.file_uploader("Upload the .keras model file", type="keras")
 
 if uploaded_model is not None:
-    model = tf.keras.models.load_model(uploaded_model)
+    # Save the uploaded model file to a temporary location
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".keras") as temp_model_file:
+        temp_model_file.write(uploaded_model.read())
+        temp_model_path = temp_model_file.name
+
+    # Load the model from the temporary file path
+    model = tf.keras.models.load_model(temp_model_path)
 
     # Upload an image file
     uploaded_file = st.file_uploader("Choose an X-ray image...", type=["jpg", "jpeg", "png"])
@@ -38,4 +45,3 @@ if uploaded_model is not None:
             st.write(f"**Prediction:** No pneumonia detected with **confidence: {100 - confidence:.2f}%**")
 else:
     st.write("Please upload the model file to proceed.")
-
