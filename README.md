@@ -1,8 +1,8 @@
 # Pneumonia-Detection
 Here's a README file for your project:
-Link of the Project:- https://pneumonia-detection-ndsvc2tektrppujewqcx5z.streamlit.app/
 ---
 
+Link of the Project:- https://pneumonia-detection-ndsvc2tektrppujewqcx5z.streamlit.app/
 # Pneumonia Detection from Chest X-Ray
 
 This project uses a Convolutional Neural Network (CNN) based on ResNet50 to classify chest X-ray images as either "Normal" or "Pneumonia". The model is trained and fine-tuned using TensorFlow and Keras and deployed with a user-friendly interface using Streamlit.
