@@ -1,6 +1,6 @@
 # Pneumonia-Detection
 Here's a README file for your project:
-
+Link of the Project:- https://pneumonia-detection-ndsvc2tektrppujewqcx5z.streamlit.app/
 ---
 
 # Pneumonia Detection from Chest X-Ray
